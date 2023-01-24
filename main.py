@@ -3015,3 +3015,5 @@ import time
 # https://github.com/
 
 print("Hello, world!")
+
+print("Данные в склонированном репозитории")
