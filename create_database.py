@@ -16,8 +16,8 @@ def _load_fake_data(session):
     lessons_names = ['Математика', 'Программирование', 'Философия', 'Алгоритмы и структуры данных',
                      'Линейная алгебра', 'Статистика', 'Физика']
 
-    group1 = Group(group_name='MDA-7')
-    group2 = Group(group_name='MDA-9')
+    group1 = Group(group_name="MDA-7")
+    group2 = Group(group_name="MDA-9")
     session.add(group1)
     session.add(group2)
 
