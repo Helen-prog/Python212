@@ -216,6 +216,8 @@ http://127.0.0.1:8000/blog/1/
 
 third
 
+
+
 django-admin startproject todos
 python manage.py startapp todo
 
@@ -224,6 +226,20 @@ models.CASCADE - если пользователь будет удален, то
 models.PROTECTED - запрещает удалять пользователя, пока у него есть задачи
 models.SET_NULL - задачи останутя в базе, даже при удалении пользователя, но значение в поле задачи изменится на NULL
 models.SET_DEFAULT -задачи останутя в базе, даже при удалении пользователя, но значение в поле задачи изменится на значение по умолчанию
+
+forms.py
+
+fourth
+
+django-admin startproject devsearch
+
+python manage.py startapp projects
+
+python manage.py shell
+
+from projects.models import Project
+
+Project.objects.filter(title__contains="site")
 
 
 	
