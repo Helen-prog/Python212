@@ -234,12 +234,22 @@ fourth
 django-admin startproject devsearch
 
 python manage.py startapp projects
+python manage.py startapp users
 
 python manage.py shell
 
 from projects.models import Project
 
-Project.objects.filter(title__contains="site")
+Project.objects.filter(vote_total__gte=37)
+Project.objects.exclude(id=1).order_by('title')
 
+quit()
+
+ForeignKey - один ко многим
+ManyToManyField - многие ко многим
+OneToOneField - один к одному
+
+
+signals.py
 
 	
