@@ -252,4 +252,17 @@ OneToOneField - один к одному
 
 signals.py
 
+utils.py
+
+pagination.html
+
+http://127.0.0.1:8000/projects/?search_query=web
+http://127.0.0.1:8000/projects/?page=2
+
+http://127.0.0.1:8000/projects/?search_query=web
+http://127.0.0.1:8000/projects/?search_query=web&page=2
+
+http://127.0.0.1:8000/?search_query=i&page=2
+
+
 	

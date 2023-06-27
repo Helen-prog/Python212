@@ -1,16 +1,23 @@
 from django.shortcuts import render, redirect
-from .models import Profile
+from .models import Profile, Skill
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from .forms import CustomUserCreationForm, ProfileForm, SkillForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+from .utils import search_profiles, paginate_profiles
 
 
 def profiles(request):
-    prof = Profile.objects.all()
-    context = {'profiles': prof}
+    prof, search_query = search_profiles(request)
+    custom_range, prof = paginate_profiles(request, prof, 3)
+    context = {
+        'profiles': prof,
+        'search_query': search_query,
+        'custom_range': custom_range,
+    }
     return render(request, 'users/index.html', context)
 
 
