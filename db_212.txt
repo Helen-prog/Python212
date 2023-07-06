@@ -128,10 +128,17 @@ flsk
 	
 http://127.0.0.1:5000/profile/elena
 
-
+Flask
 int - должны присуствовать только цифры
 float - должны присуствовать только числа с плавающей точкой
 path - можно использовать любые допустимые символы URL плюс символ "/"
+
+Django
+str - любая не пустая строка, исключая символ "/"
+int - любое положительное целое число, включая 0
+slug - латиница, символ дефис, подчеркивание
+uuid - цифры, малые латинские символы, дефис
+path -  любая не пустая строка, включая символ "/"
 
 
 http://127.0.0.1:5000/contact?username=igor&email=igor%40gmail.com&message=%D0%BF%D1%80%D0%B0%D0%BF%D1%80%D0%B0%D0%BF
@@ -264,5 +271,14 @@ http://127.0.0.1:8000/projects/?search_query=web&page=2
 
 http://127.0.0.1:8000/?search_query=i&page=2
 
+message_form.html
 
+fifth
+
+django-admin startproject programming_blog
+
+python manage.py startapp blog
+
+https://ru.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B
 	
+https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5
