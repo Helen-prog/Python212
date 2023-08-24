@@ -324,3 +324,52 @@ django-admin startproject landing_page
 python manage.py startapp cms
 python manage.py startapp price
 python manage.py startapp crm
+python manage.py startapp telebot
+
+
+@BotFather
+Бот обработчик заявок с сайта
+
+bot_test_send_message_bot
+
+6607657163:AAHZJV7MUXnWrNL98jVzy2aeTG-IYCoBvt4
+
+https://api.telegram.org/bot<token>/НАЗВАНИЕ_МЕТОДА
+
+https://api.telegram.org/bot6607657163:AAHZJV7MUXnWrNL98jVzy2aeTG-IYCoBvt4/sendMessage?chat_id=-806029148&text=текст
+
+Центр компьютерной поддержки
+
+@get_id_bot
+
+/my_id@get_id_bot
+
+sendmessage.py
+
+requests
+
+
+
+django-admin startproject app
+python manage.py startapp exchange
+python manage.py startapp weather
+
+
+
+eighth
+django-admin startproject shop
+python manage.py startapp products
+python manage.py startapp users
+
+
+category.html
+
+
+https://myaccount.google.com/
+
+store_shop_site
+
+
+
+
+

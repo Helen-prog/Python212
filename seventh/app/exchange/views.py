@@ -18,10 +18,14 @@ def exchange(request):
         from_curr = request.POST.get('from-curr')
         to_curr = request.POST.get('to-curr')
 
+        convert_amount = round(currencies[to_curr] / currencies[from_curr] * float(from_amount), 2)
+
         context = {
             'currencies': currencies,
             'from_curr': from_curr,
-            'to_cur': to_curr
+            'to_cur': to_curr,
+            'from_amount': from_amount,
+            'convert_amount': convert_amount
         }
         return render(request, context=context, template_name='exchange/index.html')
 
