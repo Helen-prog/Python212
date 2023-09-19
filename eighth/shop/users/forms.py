@@ -6,20 +6,18 @@ from datetime import timedelta
 from django.utils.timezone import now
 
 
-class UserProfileForm(UserChangeForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
-    email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
-    image = forms.ImageField(widget=forms.FileInput(), required=False)
+class UserLoginForm(AuthenticationForm):
+    username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Введите имя пользователя"}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Введите пароль"}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control py-4'
-        self.fields['image'].widget.attrs['class'] = "custom-file-input"
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'image')
+        fields = ('username', 'password')
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -47,17 +45,23 @@ class UserRegistrationForm(UserCreationForm):
         return user
 
 
-class UserLoginForm(AuthenticationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={
-        "placeholder": "Введите имя пользователя"}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={
-        "placeholder": "Введите пароль"}))
+class UserProfileForm(UserChangeForm):
+    username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
+    image = forms.ImageField(widget=forms.FileInput(), required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control py-4'
+        self.fields['image'].widget.attrs['class'] = "custom-file-input"
 
     class Meta:
         model = User
-        fields = ('username', 'password')
+        fields = ('username', 'email', 'first_name', 'last_name', 'image')
+
+
+
+
+
+

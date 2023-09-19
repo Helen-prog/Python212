@@ -360,7 +360,7 @@ eighth
 django-admin startproject shop
 python manage.py startapp products
 python manage.py startapp users
-
+python manage.py startapp orders
 
 category.html
 
@@ -370,6 +370,45 @@ https://myaccount.google.com/
 store_shop_site
 
 
+reset_password.html
+reset_password_sent.html
+reset.html
+reset_password_complete.html
+
+\! chcp 1251
+\l
+
+CREATE DATABASE store_shop_db;
+\c store_shop_db
+\conninfo
+
+DROP DATABASE store_shop_db; (не делать)
+
+CREATE ROLE store_user_1 with password 'store_shop';  
+# store_user_1 - имя пользователя
+# store_shop - пароль
+ALTER ROLE "store_user_1" WITH LOGIN;
+GRANT ALL PRIVILEGES ON DATABASE "store_shop_db" to store_user_1;
+ALTER USER store_user_1 CREATEDB;
+
+
+grant usage on schema public to public;
+grant create on schema public to public;
+
+pip install psycopg2
+
+
+GitHub
+Client ID
+f02993a71581c1e2d99b
+
+Client secrets
+c1970046dd436de9ebe3305dcd5f218ea77afb35
+
+
+https://forms.gle/x8ati8cyeRNXCx4M8
+
+context_processors.py
 
 
 
